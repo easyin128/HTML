@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My profile</title>
+    <script>
+        alert('Welcome to my homepage!');
+    </script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        // 풀다운 메뉴
+        $(document).ready(function () {
+            $('.outer-menu').hover(function () {
+                $(this).find('.inner-menu').css('display', 'block');
+            }, function () {
+                $(this).find('.inner-menu').css('display', 'none');
+            });
+        });
+    </script>
+
+    <script>
+        window.onload = function () {
+            //변수 선언
+            var count = 0;
+            var image = document.getElementById('image');
+            var frames = [
+                'actor.jpg', 'actor2.jpg', 'actor3.jpg', 'actor4.jpg', 'actor5.jpg', 'actor6.jpg', 'actor7.jpg', 'actor8.jpg', 'actor9.jpg'
+            ];
+            //타이머 반복 시작
+            setInterval(function () {
+                image.src = 'image/'+frames[count % frames.length];
+                count = count + 1;
+            }, 1000 / 2);
+        };
+    </script>
+
+    <style>
+        /* 초기화 */
+        * { margin: 0; padding: 0; }
+
+        /* 중앙 정렬 */
+        body {
+            margin: 0 auto;
+            width: 960px;
+        }
+    </style>
+
+    <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1">
+    <style>
+        /* 반응형 웹 */
+        @media screen and (orientation: portrait) {
+            body { background-color: #E5CCFF; }
+        }
+
+        @media screen and (orientation: landscape) {
+            body { background-color: #CCFFCC; }
+        }
+    </style>
+
+    <style>
+        img{
+            width: 100px;
+        }
+        #self-intro {
+            color: yellow;
+            background: #604cb9;
+            float: middle;
+            margin: 0 auto;
+        }
+    </style>
+
+    <!-- 드롭다운 -->
+    <style>
+        .outer-menu {
+            float: left;
+            width: 200px; height: 20px;
+            line-height: 20px;
+            padding: 10px 0;
+            position: relative;
+            text-align: center;
+            margin: 0;
+            font-size: 15px;
+            font-weight: bold;
+            z-index: 9999;
+        }
+        .outer-menu:hover { background: #E1DFDF; }
+
+        .inner-menu {
+            display: none;
+            background: #FFFFFF;
+            margin-top: 10px;
+            padding: 10px 0;
+            width: 100%;
+            border-top: 1px solid #cccaca;
+            box-shadow: 0 2px 4px rgba(34,25,25,0.5);
+        }
+        .inner-menu a {
+            display: block;
+            padding: 5px 10px;
+            z-index: 5000;
+        }
+        .inner-menu a:hover { background: #E1DFDF; }
+
+        #left-section {
+            width: 300px;
+            height: 300px;
+            background: #4cb94c;
+            position: relative;
+            overflow: hidden;
+            float: left;
+            margin: 0 auto;}
+
+        #right-section {
+            width: 300px;
+            height: 300px;
+            background: #912424;
+            position: relative;
+            overflow: hidden;
+            float: left;
+            margin: 0 auto;}
+    </style>
+
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <img src="./image/pofile.jpg" alt="내 사진"/>
+    <ul class="outer-menu">  
+        <a href="#">정보</a> 
+        <ul class="inner-menu"> 
+            <a href="#">학교 : 덕성여자대학교</a>
+            <a href="#">학번 : 20210671</a>
+            <a href="#">학과 : 소프트웨어</a>
+            <a href="#">이름 : 이지인</a>
+        </ul>  
+    </ul> 
+    <hr></hr>
+
+    <h3><b><i><ins><br> <소개글> </ins></i></b></h3>
+    <div id="self-intro">
+        <p>안녕하세요. 앱 개발자를 꿈꾸는 소프트웨어학과 새내기입니다.<br>
+            소프트웨어 심화전공을 선택하였고, 이번 학기 열린 전공 수업 4개를 모두 수강하였습니다.<br>
+            따로  하고 있는 코딩 공부는 백준 알고리즘 문제를 매일 풀며 사고하는 능력을 기르고 있습니다.<br>
+            또한, 대내활동으로 아두이노 동아리에 참여하고 있습니다.<br></p>
+    </div>
+    
+    <h3><b><i><ins><br> <2022년 2학년 1학기 시간표> </ins></i></b></h3>
+    <form>
+        <table border="1" style= "color: rgb(255, 0, 170)">
+            <thead>
+                <tr>
+                    <th colspan="5">My schdule</th>
+                </tr>
+                <tr>
+                    <td>월</td>
+                    <td>화</td>
+                    <td>수</td>
+                    <td>목</td>
+                    <td>금</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>컴퓨터 통신과 네트워크(15:00~16:00)</td>
+                    <td>소셜 퍼블리싱(10:30~11:45)</td>
+                    <td>대학글쓰기(9:00~11:00)</td>
+                    <td>소셜 퍼블리싱(9:00~10:15)</td>
+                    <td>대학글쓰기(11:00~12:00)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>컴퓨터의 이해와 활용(12:00~1:15)</td>
+                    <td>C와 리눅스 1(13:00~15:00)</td>
+                    <td>웹 응용 프로그래밍(12:00~1:15)</td>
+                    <td>C와 리눅스 1(13:00~14:00)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>웹 응용 프로그래밍(15:00~16:15)</td>
+                    <td>컴퓨터 통신과 네트워크(16:00~18:00)</td>
+                    <td>컴퓨터의 이해와 활용(15:00~16:15)</td>
+                    <td>파이썬 고급 프로그래밍(15:00~18:00)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 취미 맞추기 -->
+        <table>
+            <tr>
+                <td>
+                        <ul style="margin: 10px 0;padding-left: 20px;">
+                        <li style="color: red">
+                            Guess my hobby.
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid black">
+                    <div>
+                    <label>
+                        <input type="radio" name="hobby" value="singing"/>singing
+                    </label>
+                    <label>
+                        <input type="radio" name="hobby" value="reading"/>reading
+                    </label>
+                    <label>
+                        <input type="radio" name="hobby" value="swimming"/>swimming
+                    </label>
+                    <label>
+                        <input type="radio" name="hobby" value="cooking"/>cooking
+                    </label>
+                    </div>
+                    <input type="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div id="left-section"> 
+        <h3><b><i><ins> <노래 녹음한 영상> </ins></i></b></h3>
+        <video height="180" width="288" controls>
+            <source src="cover.mp4" type="video/mp4">
+        </video>
+    </div>
+    
+    <div id="right-section">
+        <h3><b><i><ins> <최애 - 손석구> </ins></i></b></h3>
+        <img id="image">
+    </div>
+</body>
+</html>
